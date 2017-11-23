@@ -14,9 +14,15 @@ npm test
 
 ## REST API
 
-1)	POST Launch 
+#### 1)	POST Launch 
+
 url: https://rp.epam.com/api/v1/oleksandr_panibratenko_personal/launch?access_token=zzzzzz-03a9-yyyy-92a2-xxxxxxxx
-headers: { 'User-Agent': 'Node.js', 'Content-Type': 'application/json' }
+
+headers: 
+```
+{ 'User-Agent': 'Node.js', 'Content-Type': 'application/json' }
+```
+
 body(json): 
 ```
 { 
@@ -28,6 +34,7 @@ name: '[LAUNCH NAME-->TEST151017<]###',
 ```
 
 Возвращает id ланча: 
+
 ```
 {
        id: 5a0c41aeb3cb1f000167b7a3
@@ -37,10 +44,18 @@ name: '[LAUNCH NAME-->TEST151017<]###',
 
 
 
-2)	POST start Root Item 
+#### 2)	POST start Root Item 
+
 url: https://rp.epam.com/api/v1/oleksandr_panibratenko_personal/item?access_token=zzzzzz-03a9-yyyy-92a2-xxxxxxxx
-headers: { 'User-Agent': 'Node.js', 'Content-Type': 'application/json' }
+
+headers: 
+
+```
+{ 'User-Agent': 'Node.js', 'Content-Type': 'application/json' }
+```
+
 body(json): 
+
 ```
 { 
 name: 'First spec',
@@ -51,7 +66,9 @@ name: 'First spec',
        tags: undefined 
 }
 ```
+
 Возвращает id Root Item: 
+
 ```
 {      
     "id": "5a0c576ab3cb1f00016f216f"
@@ -61,9 +78,15 @@ name: 'First spec',
 Он нужен для finishItem.
 
 
-3)	POST start Child Item в урле есть айдишник родителя Root Item а в теле есть ланч айди!
+#### 3)	POST start Child Item в урле есть айдишник родителя Root Item а в теле есть ланч айди!
+
 url: https://rp.epam.com/api/v1/oleksandr_panibratenko_personal/item/5a0c677cb3cb1f00017304f6?access_token=zzzzzz-03a9-yyyy-92a2-xxxxxxxx
-headers: { 'User-Agent': 'Node.js', 'Content-Type': 'application/json' }
+
+headers:
+``` 
+{ 'User-Agent': 'Node.js', 'Content-Type': 'application/json' }
+```
+
 body(json): 
 ```
 { 
@@ -75,21 +98,31 @@ name: 'should fail test',
        tags: undefined 
 } 
 ```
+
 Возвращает id Child Item: 
+
 ```
 {
     "id": "5a0c6b95b3cb1f00017493ac"
 }
 ```
+
 Он нужен для finishItem.
 
 
 
 
-4)	POST sendLog в теле есть айди Child Item!
+#### 4)	POST sendLog в теле есть айди Child Item!
+
 url: https://rp.epam.com/api/v1/oleksandr_panibratenko_personal/log?access_token=zzzzzz-03a9-yyyy-92a2-xxxxxxxx 
-headers: { 'User-Agent': 'Node.js', 'Content-Type': 'application/json' }
+
+headers: 
+```
+{ 'User-Agent': 'Node.js', 'Content-Type': 'application/json' }
+```
+
 body(json): 
+
 ```
 { 
 item_id: '5a0c677cb3cb1f0001730505',
@@ -98,44 +131,65 @@ item_id: '5a0c677cb3cb1f0001730505',
        message: 'Test Failed' 
 } 
 ```
+
 Возвращает id sendLog: 
+
 ```
 {
     "id": "5a0c6dbfb3cb1f00017595a0"
 }
 ```
+
 Он нужен для finishItem.
 
 
               
 
-5)	PUT finish Item Закрывает Root Item или Child Item или sendLog. В урле должен быть id того, что закрывается.
+#### 5)	PUT finish Item Закрывает Root Item или Child Item или sendLog. В урле должен быть id того, что закрывается.
+
 url:  https://rp.epam.com/api/v1/oleksandr_panibratenko_personal/item/5a0c576ab3cb1f00016f216f?access_token=zzzzzz-03a9-yyyy-92a2-xxxxxxxx
-headers: { 'User-Agent': 'Node.js', 'Content-Type': 'application/json' }
+
+headers:
+``` 
+{ 'User-Agent': 'Node.js', 'Content-Type': 'application/json' }
+```
+
 body(json): 
+
 ```
 { 
 status: 'failed', 
 end_time: 1510755821754 
 }
 ```
+
 Возвращает:
+
 ```
 {
                      "msg": "TestItem with ID = '5a0c576ab3cb1f00016f216f' successfully finished."
 }
 ```
 
-6)	PUT finishLaunch 
+#### 6)	PUT finishLaunch 
+
 url:  https://rp.epam.com/api/v1/oleksandr_panibratenko_personal/launch/5a0c41aeb3cb1f000167b7a3/finish?access_token=zzzzzz-03a9-yyyy-92a2-xxxxxxxx
-headers: { 'User-Agent': 'Node.js', 'Content-Type': 'application/json' }
+
+headers:
+``` 
+{ 'User-Agent': 'Node.js', 'Content-Type': 'application/json' }
+```
+
 body(json): 
+
 ```
 { 
        end_time: 1510752942730 
 }
 ```
+
 Возвращает:
+
 ```
 {
     "msg": "Launch with ID = '5a0c41aeb3cb1f000167b7a3' successfully finished."
