@@ -13,7 +13,7 @@ npm i
 npm run pre-test
 ```
 ## Config
-'''
+```
 configOptions: {
   endpoint: 'https://rp.epam.com/api/v1',
   password: 'zzzzzz-03a9-yyyy-92a2-xxxxxxxx', // get it in rp.epam.com
@@ -23,7 +23,7 @@ configOptions: {
 
 shardTestFiles: true, // This settings makes report Portal to create multiple launches for one test run
 
-'''
+```
 ## Running tests
 ```cmd
 npm test
