@@ -12,6 +12,18 @@ npm i
 ```cmd
 npm run pre-test
 ```
+## Config
+'''
+configOptions: {
+  endpoint: 'https://rp.epam.com/api/v1',
+  password: 'zzzzzz-03a9-yyyy-92a2-xxxxxxxx', // get it in rp.epam.com
+  launch: '[RP3--> true TEST-01-12-17 12:00 <--]###', // name your Lounch pattern
+  project: 'oleksandr_panibratenko_personal'  // name your project
+}
+
+shardTestFiles: true, // This settings makes report Portal to create multiple launches for one test run
+
+'''
 ## Running tests
 ```cmd
 npm test
