@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "mocha": "^3.5.3",
+    "mocha-rp-reporter": "^1.0.12",
     "mocha-multi-reporters": "1.1.5",
     "moment": "^2.18.1",
     "protractor": "^5.1.2",

@@ -12,7 +12,7 @@ exports.config = {
 				configOptions: {
 					endpoint: 'https://rp.epam.com/api/v1',
 					password: '761b273e-03a9-4f54-92a2-e58759e70572', // TODO: fill in token (from email)
-					launch: '[RP2---->true TEST-23-10-17  11:38 <-----]###',
+					launch: '[RP3--> true TEST-01-12-17 12:00 <--]###',
 					project: 'oleksandr_panibratenko_personal'
 				}
 			}
@@ -34,7 +34,7 @@ exports.config = {
     beforeLaunch() {
         rmdir('./allure-results');
         rmdir('./allure-report');
-
+				//TODO Clear local files count_.txt и LaunchId_.txt ???
         // TODO: function call that creates new launch
     },
 
